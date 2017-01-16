@@ -1,13 +1,36 @@
 /boot		emmc	/dev/block/bootdevice/by-name/boot
 /recovery	emmc	/dev/block/bootdevice/by-name/recovery	flags=backup=1
 /system		ext4	/dev/block/bootdevice/by-name/system
+/system_image	emmc	/dev/block/bootdevice/by-name/system
 /data		f2fs	/dev/block/bootdevice/by-name/userdata	flags=encryptable=footer;length=-16384
 /cache		ext4	/dev/block/bootdevice/by-name/cache
+/usb-otg	vfat	/dev/block/sdg1 /dev/block/sdg		flags=display="USB OTG";storage;wipeingui;removable
+
 # /misc is disabled because ORS commands to factory reset on boot key combo
 #/misc		emmc	/dev/block/bootdevice/by-name/misc
+
+# /firmware currently appears to not be necessary for decryption
+#/firmware	vfat	/dev/block/bootdevice/by-name/modem	flags=backup=1;display="Firmware";mounttodecrypt
+
+# For going between OxygenOS 3.5/4.0+
+/aboot		emmc	/dev/block/bootdevice/by-name/aboot	flags=backup=1;display="Bootloader"
+/cmnlib64	emmc	/dev/block/bootdevice/by-name/cmnlib64	flags=backup=1;subpartitionof=/aboot
+/cmnlib		emmc	/dev/block/bootdevice/by-name/cmnlib	flags=backup=1;subpartitionof=/aboot
+/hyp		emmc	/dev/block/bootdevice/by-name/hyp	flags=backup=1;subpartitionof=/aboot
+/pmic		emmc	/dev/block/bootdevice/by-name/pmic	flags=backup=1;subpartitionof=/aboot
+/tz		emmc	/dev/block/bootdevice/by-name/tz	flags=backup=1;subpartitionof=/aboot
+/rpm		emmc	/dev/block/bootdevice/by-name/rpm	flags=backup=1;subpartitionof=/aboot
+/keymaster	emmc	/dev/block/bootdevice/by-name/keymaster	flags=backup=1;subpartitionof=/aboot
+/devcfg		emmc	/dev/block/bootdevice/by-name/devcfg	flags=backup=1;subpartitionof=/aboot
+/xbl		emmc	/dev/block/bootdevice/by-name/xbl	flags=backup=1;subpartitionof=/aboot
+
+# Modem/Bluetooth backup/restore
+/modem		emmc	/dev/block/bootdevice/by-name/modem	flags=backup=1;display="Modem"
+/bluetooth	emmc	/dev/block/bootdevice/by-name/bluetooth	flags=backup=1;subpartitionof=/modem
+/dsp		emmc	/dev/block/bootdevice/by-name/dsp	flags=backup=1;subpartitionof=/modem
+
+# EFS backup/restore
 /efs1		emmc	/dev/block/bootdevice/by-name/modemst1	flags=backup=1;display="EFS"
 /efs2		emmc	/dev/block/bootdevice/by-name/modemst2	flags=backup=1;subpartitionof=/efs1
 /efsg		emmc	/dev/block/bootdevice/by-name/fsg	flags=backup=1;subpartitionof=/efs1
 /efsc		emmc	/dev/block/bootdevice/by-name/fsc	flags=backup=1;subpartitionof=/efs1
-/firmware	vfat	/dev/block/bootdevice/by-name/modem	flags=backup=1;display="Firmware";mounttodecrypt
-/usb-otg	vfat	/dev/block/sdg1 /dev/block/sdg		flags=display="USB OTG";storage;wipeingui;removable
