@@ -6,8 +6,8 @@
 /cache		ext4	/dev/block/bootdevice/by-name/cache
 /usb-otg	vfat	/dev/block/sdg1 /dev/block/sdg		flags=display="USB OTG";storage;wipeingui;removable
 
-# /misc is disabled because ORS commands to factory reset on boot key combo
-#/misc		emmc	/dev/block/bootdevice/by-name/misc
+# For bootloader commands to recovery
+/misc		emmc	/dev/block/bootdevice/by-name/misc
 
 # /firmware currently appears to not be necessary for decryption
 #/firmware	vfat	/dev/block/bootdevice/by-name/modem	flags=backup=1;display="Firmware";mounttodecrypt

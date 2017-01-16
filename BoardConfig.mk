@@ -67,6 +67,7 @@ TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 149
 TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
+TW_IGNORE_MISC_WIPE_DATA := true
 
 # exFAT drivers included in the kernel
 TW_NO_EXFAT_FUSE := true
