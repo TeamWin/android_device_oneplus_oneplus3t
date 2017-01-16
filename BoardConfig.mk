@@ -32,7 +32,7 @@ TARGET_2ND_CPU_VARIANT := cortex-a53
 TARGET_KERNEL_ARCH := arm64
 TARGET_KERNEL_HEADER_ARCH := arm64
 TARGET_KERNEL_CONFIG := twrp_defconfig
-TARGET_KERNEL_DEVICE_DEFCONFIG := device_oneplus_3T
+TARGET_KERNEL_DEVICE_DEFCONFIG := device_oneplus3t
 
 TARGET_PREBUILT_KERNEL := $(DEVICE_TREE)/Image.gz-dtb
 
@@ -65,7 +65,6 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/soc/6a00000.ssusb/6a00000.dwc3/
 TW_BRIGHTNESS_PATH := "/sys/devices/soc/900000.qcom\x2cmdss_mdp/900000.qcom\x2cmdss_mdp:qcom\x2cmdss_fb_primary/leds/lcd-backlight/brightness"
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 149
-TW_SCREEN_BLANK_ON_BOOT := true
 TW_INCLUDE_NTFS_3G := true
 TW_IGNORE_MISC_WIPE_DATA := true
 
