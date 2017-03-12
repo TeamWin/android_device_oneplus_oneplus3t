@@ -66,7 +66,8 @@ TW_BRIGHTNESS_PATH := "/sys/devices/soc/900000.qcom\x2cmdss_mdp/900000.qcom\x2cm
 TW_MAX_BRIGHTNESS := 255
 TW_DEFAULT_BRIGHTNESS := 149
 TW_INCLUDE_NTFS_3G := true
-TW_IGNORE_MISC_WIPE_DATA := true
+#TW_IGNORE_MISC_WIPE_DATA := true
+TW_INPUT_BLACKLIST := "hbtp_vm"
 
 # exFAT drivers included in the kernel
 TW_NO_EXFAT_FUSE := true
@@ -83,4 +84,4 @@ TARGET_HW_DISK_ENCRYPTION := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 
 # Debug flags
-TWRP_INCLUDE_LOGCAT := true
+#TWRP_INCLUDE_LOGCAT := true
